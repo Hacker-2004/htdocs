@@ -9,7 +9,7 @@ Zhengkang Fan
 
 #### Project title
 
-Gifterquipo
+Giftquipo
 
 ***
 
