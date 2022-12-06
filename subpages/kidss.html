@@ -1,0 +1,476 @@
+            <style>
+                .box {
+  position: relative;
+}
+.box::before {
+  content: "";
+  width: 300px;
+  height: 300px;
+  background-color: #89cff0;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+.box-body {
+  position: relative;
+  height: 150px;
+  width: 150px;
+  margin-top: 123.3333333333px;
+  margin-left: 25px;
+  background-color: #cc231e;
+  border-bottom-left-radius: 5%;
+  border-bottom-right-radius: 5%;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(#762c2c,#ff0303);
+}
+.box-body .img{
+  opacity: 0;
+  transform: translateY(0%);
+  transition: all 0.5s;
+  margin: 0 auto;
+  display: block;
+}
+.box-body:hover {
+  cursor: pointer;
+  -webkit-animation: box-body 1s forwards ease-in-out;
+          animation: box-body 1s forwards ease-in-out;
+}
+.box-body:hover .img{
+  opacity: 1;
+  z-index: 0;
+  transform: translateY(-157px);
+
+
+   
+}
+.box-body:hover .box-lid {
+  -webkit-animation: box-lid 1s forwards ease-in-out;
+          animation: box-lid 1s forwards ease-in-out;
+}
+.box-body:hover .box-bowtie::before {
+  -webkit-animation: box-bowtie-left 1.1s forwards ease-in-out;
+          animation: box-bowtie-left 1.1s forwards ease-in-out;
+}
+.box-body:hover .box-bowtie::after {
+  -webkit-animation: box-bowtie-right 1.1s forwards ease-in-out;
+          animation: box-bowtie-right 1.1s forwards ease-in-out;
+}
+.box-body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 50px;
+  background: linear-gradient(#ffffff,#ffefa0)
+}
+.box-lid {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: 90%;
+  height: 40px;
+  background-color: #cc231e;
+  height: 40px;
+  width: 160px;
+  border-radius: 5%;
+  box-shadow: 0 8px 4px -4px rgba(0, 0, 0, 0.3);
+}
+.box-lid::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 50px;
+  background: linear-gradient(#ffefa0,#fff)
+}
+.box-bowtie {
+  z-index: 1;
+  height: 100%;
+}
+.box-bowtie::before, .box-bowtie::after {
+  content: "";
+  width: 83.3333333333px;
+  height: 83.3333333333px;
+  border: 16.6666666667px solid white;
+  border-radius: 50% 50% 0 50%;
+  position: absolute;
+  bottom: 99%;
+  z-index: -1;
+}
+.box-bowtie::before {
+  left: 50%;
+  -webkit-transform: translateX(-100%) skew(10deg, 10deg);
+          transform: translateX(-100%) skew(10deg, 10deg);
+}
+.box-bowtie::after {
+  left: 50%;
+  -webkit-transform: translateX(0%) rotate(90deg) skew(10deg, 10deg);
+          transform: translateX(0%) rotate(90deg) skew(10deg, 10deg);
+}
+
+@-webkit-keyframes box-lid {
+  0%,
+  42% {
+    -webkit-transform: translate3d(-50%, 0%, 0) rotate(0deg);
+            transform: translate3d(-50%, 0%, 0) rotate(0deg);
+  }
+  60% {
+    -webkit-transform: translate3d(-85%, -230%, 0) rotate(-25deg);
+            transform: translate3d(-85%, -230%, 0) rotate(-25deg);
+  }
+  90%, 100% {
+    -webkit-transform: translate3d(-119%, 225%, 0) rotate(-70deg);
+            transform: translate3d(-119%, 225%, 0) rotate(-70deg);
+  }
+}
+
+@keyframes box-lid {
+  0%,
+  42% {
+    -webkit-transform: translate3d(-50%, 0%, 0) rotate(0deg);
+            transform: translate3d(-50%, 0%, 0) rotate(0deg);
+  }
+  60% {
+    -webkit-transform: translate3d(-85%, -230%, 0) rotate(-25deg);
+            transform: translate3d(-85%, -230%, 0) rotate(-25deg);
+  }
+  90%, 100% {
+    -webkit-transform: translate3d(-119%, 225%, 0) rotate(-70deg);
+            transform: translate3d(-119%, 225%, 0) rotate(-70deg);
+  }
+}
+@-webkit-keyframes box-body {
+  0% {
+    -webkit-transform: translate3d(0%, 0%, 0) rotate(0deg);
+            transform: translate3d(0%, 0%, 0) rotate(0deg);
+  }
+  25% {
+    -webkit-transform: translate3d(0%, 25%, 0) rotate(20deg);
+            transform: translate3d(0%, 25%, 0) rotate(20deg);
+  }
+  50% {
+    -webkit-transform: translate3d(0%, -15%, 0) rotate(0deg);
+            transform: translate3d(0%, -15%, 0) rotate(0deg);
+  }
+  70% {
+    -webkit-transform: translate3d(0%, 0%, 0) rotate(0deg);
+            transform: translate3d(0%, 0%, 0) rotate(0deg);
+  }
+}
+@keyframes box-body {
+  0% {
+    -webkit-transform: translate3d(0%, 0%, 0) rotate(0deg);
+            transform: translate3d(0%, 0%, 0) rotate(0deg);
+  }
+  25% {
+    -webkit-transform: translate3d(0%, 25%, 0) rotate(20deg);
+            transform: translate3d(0%, 25%, 0) rotate(20deg);
+  }
+  50% {
+    -webkit-transform: translate3d(0%, -15%, 0) rotate(0deg);
+            transform: translate3d(0%, -15%, 0) rotate(0deg);
+  }
+  70% {
+    -webkit-transform: translate3d(0%, 0%, 0) rotate(0deg);
+            transform: translate3d(0%, 0%, 0) rotate(0deg);
+  }
+}
+@-webkit-keyframes box-bowtie-right {
+  0%,
+  50%,
+  75% {
+    -webkit-transform: translateX(0%) rotate(90deg) skew(10deg, 10deg);
+            transform: translateX(0%) rotate(90deg) skew(10deg, 10deg);
+  }
+  90%,
+  100% {
+    -webkit-transform: translate(-50%, -15%) rotate(45deg) skew(10deg, 10deg);
+            transform: translate(-50%, -15%) rotate(45deg) skew(10deg, 10deg);
+    box-shadow: 0px 4px 8px -4px rgba(0, 0, 0, 0.3);
+  }
+}
+@keyframes box-bowtie-right {
+  0%,
+  50%,
+  75% {
+    -webkit-transform: translateX(0%) rotate(90deg) skew(10deg, 10deg);
+            transform: translateX(0%) rotate(90deg) skew(10deg, 10deg);
+  }
+  90%,
+  100% {
+    -webkit-transform: translate(-50%, -15%) rotate(45deg) skew(10deg, 10deg);
+            transform: translate(-50%, -15%) rotate(45deg) skew(10deg, 10deg);
+    box-shadow: 0px 4px 8px -4px rgba(0, 0, 0, 0.3);
+  }
+}
+@-webkit-keyframes box-bowtie-left {
+  0% {
+    -webkit-transform: translateX(-100%) rotate(0deg) skew(10deg, 10deg);
+            transform: translateX(-100%) rotate(0deg) skew(10deg, 10deg);
+  }
+  50%,
+  75% {
+    -webkit-transform: translate(-50%, -15%) rotate(45deg) skew(10deg, 10deg);
+            transform: translate(-50%, -15%) rotate(45deg) skew(10deg, 10deg);
+  }
+  90%,
+  100% {
+    -webkit-transform: translateX(-100%) rotate(0deg) skew(10deg, 10deg);
+            transform: translateX(-100%) rotate(0deg) skew(10deg, 10deg);
+  }
+}
+@keyframes box-bowtie-left {
+  0% {
+    -webkit-transform: translateX(-100%) rotate(0deg) skew(10deg, 10deg);
+            transform: translateX(-100%) rotate(0deg) skew(10deg, 10deg);
+  }
+  50%,
+  75% {
+    -webkit-transform: translate(-50%, -15%) rotate(45deg) skew(10deg, 10deg);
+            transform: translate(-50%, -15%) rotate(45deg) skew(10deg, 10deg);
+  }
+  90%,
+  100% {
+    -webkit-transform: translateX(-100%) rotate(0deg) skew(10deg, 10deg);
+            transform: translateX(-100%) rotate(0deg) skew(10deg, 10deg);
+  }
+}
+h5{
+    font-family: 'Zen Dots', cursive;
+    color:white;
+}
+.cl{
+    font-family: 'Zen Dots', cursive;
+    color:white;
+}
+</style>
+<section class="services" id="info_tab" style="text-align:center">
+                <img src="../images/tree.png">
+                <h3 class="text-primary">Gifts</h3>
+                     <div class="row justify-content-center" id="mark">         
+                    </div>
+            </section>
+         <script>
+             var value_array = [
+    'amazing+oragami+paper+set',
+    'archery+set',
+    'baseball+playset',
+    'blue+benz+play+car',
+    'colored+beads+bracelet+set',
+    'craft+box',
+    'crayola+washable+paint+set',
+    'doctor+playset',
+    'dream+hair+salon+set',
+    'easy+nails+nail+spa',
+    'fashion+divas+doll+set',
+    'fashion+studio',
+    'fisrt+steps+learning+laptop',
+    'gingerbread+house+decoration+set',
+    'kiddie+buzz+phone',
+    'kids+learning+bot',
+    'kurio+play+watch',
+    'learning+tablet',
+    'mini+glof+set',
+    'ping+pong+table+set',
+    'play+circle+ice+cream+maker',
+    'princess+pink+makeup+set',
+    'racket+ball+playset',
+    'remote+touch+glow+night+lamp',
+    'sewing+clothing+crafts',
+    'soccer+playset',
+    'sparkling+wonder+paint+ordaments',
+    'youth+grocery+store+set',
+    'youth+kitchen+set',
+    'youth+piano+set'
+]
+var gift_title=[
+    'Amazing Oragami Paper Set',
+    'Archery Set',
+    'Baseball Playset',
+    'Blue Benz Play Car',
+    'Colored Beads Bracelet Set',
+    'Craft Box',
+    'Crayola Washable Paint Set',
+    'Doctor Playset',
+    'Dream Hair Salon Set',
+    'Easy Nails Nail Spa',
+    'Fashon Divas Doll Set',
+    'Fashon Studio',
+    'First Steps Learning Laptop',
+    'Gingerbread House Decoration Set',
+    'Kiddie Buzz Phone',
+    'Kids Learning Bot',
+    'Kurio Play Watch',
+    'Learning Tablet',
+    'Mini Golf Set',
+    'Ping Pong Table Set',
+    'Play Circle Ice Cream Maker',
+    'Princess Pink Makeup Set',
+    'Racket Ball Playset',
+    'Remote Touch Glow Night Lamp',
+    'Sewing Clothing Crafts',
+    'Soccer Playset',
+    'Sparkling Wonder Paint Ordaments',
+    'Youth Grocery Store Set',
+    'Youth Kitchen Set',
+    'Youth Piano Set'
+]
+var image_array = [
+    'amazing_oragami_paper_set.jpg',
+    'archery_set.jpg',
+    'baseball_playset.jpg',
+    'blue_benz_play_car.jpg',
+    'colored_beads_bracelet_set.jpg',
+    'craft_box.jpg',
+    'crayola_washable_paint_set.jpg',
+    'doctor_playset.jpg',
+    'dream_hair_salon_set.jpg',
+    'easy_nails_nail_spa.jpg',
+    'fashion_divas_doll_set.jpg',
+    'fashion_studio.jpg',
+    'first_steps_learning_laptop.jpg',
+    'gingerbread_house_decoration_set.jpg',
+    'kiddie_buzz_phone.jpg',
+    'kids_learning_bot.jpg',
+    'kurio_play_watch.jpg',
+    'learning_tablet.jpg',
+    'mini_golf_set.jpg',
+    'ping_pong_table_set.jpg',
+    'play_circle_ice_cream_maker.jpg',
+    'princess_pink_makeup_set.jpg',
+    'racket_ball_playset.jpg',
+    'remote_touch_glow_night_lamp.jpg',
+    'sewing_clothing_crafts.jpg',
+    'soccer_playset.jpg',
+    'sparkling_wonder_paint_ordaments.jpg',
+    'youth_grocery_store_set.jpg',
+    'youth_kitchen_set.jpg',
+    'youth_piano_set.jpg'
+]
+var links_array=[
+    "https://www.amazon.com/Jar-Melo-Amazing-Origami-Beginners/dp/B07Q81WM9Q",
+    "https://www.amazon.com/OWNONE-1-Kids-Bow-Arrows/dp/B0B3XM3L9F",
+    "https://www.walmart.com/ip/Pop-Up-Baseball-Play-Set/222691846",
+    "https://kidcarshop.com/products/future-concept-12v-kids-ride-on-car-with-remote-control-in-white",
+    "https://www.amazon.com/14000-Rainbow-Rubber-Bands-Twist/dp/B07W53M53X",
+    "https://www.amazon.com/Olly-Kids-Supplies-Ultimate-Crafting/dp/B08JLPZP1K",
+    "https://shop.crayola.com/paint-and-create/washable-paint-set-over-50-pieces-5410760000.html?bvstate=pg:2/ct:r",
+    "https://www.walmart.com/ip/Kids-Doctor-Pretend-Play-Simulation-Hospital-Toys-with-Suitcase-Brain-Toy-for-Children-Role-Play-Educational-Toys/1037030365?wmlspartner=wlpa&selectedSellerId=101229147",
+    "https://www.amazon.com/Fstop-Labs-Kids-Make-Kit/dp/B07DXJ74L4",
+    "https://www.walmart.com/ip/Easy-Nails-Nail-Spa/52153572",
+    "https://www.zulily.com/p/wonderplay-hot-pink-blue-annies-collection-fashion-doll-set-girls-296290-42707287.html",
+    "https://www.target.com/p/creativity-for-kids-designed-by-you-fashion-studio/-/A-75663373",
+    "https://www.kohls.com/product/prd-2326439/kidz-delight-tech-too-my-first-2-in-1-tablet.jsp?skuid=70028701&CID=seo_offers&utm_campaign=SAG&utm_medium=organic&utm_source=google&utm_product=70028701",
+    "https://www.amazon.com/Wilton-Petite-Pre-baked-Gingerbread-House/dp/B003B3OKA4",
+    "https://www.amazon.com/VTech-80-541150-KidiBuzz-3-Purple/dp/B08V8NJMG1",
+    "https://www.bestbuy.com/site/wonder-workshop-wonder-pack-turquoise/5706128.p?skuId=5706128",
+    "https://www.amazon.com/Kids-Smart-Watch-Boys-Girls/dp/B08VWK7PBV",
+    "https://www.bestbuy.com/site/vtech-innotab-max-7-8gb-white-blue/4317400.p?skuId=4317400",
+    "https://www.walmart.com/ip/NICEXMAS-Kids-Playing-Set-Outdoor-Parent-child-Toy-Sports-Interactive-Toy-Random-Style-3pcs-Clubs-6pcs-Ball-2pcs-Goal-2pcs-Ba/1805777271?wmlspartner=wlpa&selectedSellerId=18988",
+    "https://www.walmart.com/ip/JuLam-Mini-Ping-Pong-Table-Tennis-Table-Set-Wooden-Children-s-Educational-Toys/451288485",
+    "https://www.walmart.com/ip/Science-Play-Glitter-Magic/1532984147?wmlspartner=wlpa&selectedSellerId=101012798",
+    "https://www.walmart.com/ip/Make-up-Toy-Box-Children-s-Make-up-Toy-Set-Make-up-Car/1014710725?wmlspartner=wlpa&selectedSellerId=101203433",
+    "https://www.target.com/p/swingball-early-fun-toy-all-surface-3pc/-/A-86067140?ref=tgt_adv_XS000000&AFID=google_pla_df_free_online&CPNG=Sports&adgroup=91-14",
+    "https://www.ebay.com/itm/284363941647",
+    "https://www.amazon.com/EXCEART-Electric-Portable-Embroidery-Beginners/dp/B089M9418G", 
+    "https://www.walmart.com/ip/Willkey-Kids-Toys-Hover-Soccer-Ball-Rechargeable-Air-Power-Floating-Football-Colorful-Led-Lights-And-Soft-Foam-Bumpers-Soccer-Toys-Gifts/621205202",
+    "https://www.ebay.com/itm/255403264943?hash=item3b77388baf:g:Y9MAAOSw4ydiF6kd",
+    "https://www.amazon.com/deAO-Supermarket-Superstore-Children-Accessories/dp/B08CHLKNHL",
+    "https://www.bedbathandbeyond.com/store/product/step2-littbaker-39-s-kitchen/1046133588",
+    "https://www.walmart.com/ip/Best-Choice-Products-37-Key-Kids-Electronic-Piano-Keyboard-w-Multiple-Sounds-Lights-Microphone-Stool-Blue/197606767?wmlspartner=wlpa&selectedSellerId=1381"
+]
+var images=[]
+var valuse=[]
+var link=[]
+var gift=[]
+function get_random_image(){
+  for (var i=0, tempimg=image_array,tempval=value_array,temlink=links_array,temgift=gift_title;i<image_array.length;i++){
+    random_index= Math.floor(Math.random()* tempimg.length);
+    images.push(tempimg[random_index])
+    valuse.push(tempval[random_index])
+    link.push(temlink[random_index])
+    gift.push(temgift[random_index])
+    tempimg.splice(random_index,1)
+    tempval.splice(random_index,1)
+    temlink.splice(random_index,1)
+    temgift.splice(random_index,1)
+  }
+}
+  get_random_image()
+          var check=0
+          var loc=""
+          var poc=""
+    function cards(){
+        for(var x=0; x<8; x+=1){
+            var mod="#Modal"+x
+            var modid="Modal"+x
+                $nodes=$("<div class='row justify-content-center' id='mark'></div>").html=("<div class='card col-10 col-md-5 col-xl-3 col-xl-2-5 mx-auto my-3' style='background-color:green;'><div class='card-body'>"+
+                        "<div class='container photo'><div class='row'><div class='col-12 mt-5 d-flex justify-content-center'><div class='box-body'><img class='img' src=../img/kids/"+images[x]+"  value='no' alt="+valuse[x]+ " style='width:150px;height:150px'>"+
+                        "<div class='box-lid'><div class='box-bowtie'></div></div></div></div></div></div><hr><div class='hide'><i class='mx-2 fas fa-info-circle fa-lg' class='btn' title='More Info' type='button' data-toggle='modal' data-target="+mod+" style='color:gold;'></i><span class='sr-only'>More Info.</span>"+
+                        "<div class='modal fade' id="+modid+" tabindex='-1' aria-labelledby='Label' aria-hidden='true'><div class='modal-dialog'><div class='modal-content'><div class='modal-header' style='background-color: red;'><h5 class='modal-title' id='Label'>Information on gift</h5><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span>"+
+                        "</button></div><div class='modal-body' style='background-color: green;'><img class='img' src=../img/kids/"+images[x]+" alt="+valuse[x]+" style='width:150px;height:150px'><div class='cl'>"+gift[x]+"</div><div class='cl'>Location:<button class='location' style='background:none;border-style: none'>Allow loaction</button></div>"+
+                        "<div class='cl'>Find Near Me:<button class='check' alt="+valuse[x]+" style='background:none;border-style: none'>Click Here</button></div><div class='cl'>Link:<a href="+link[x]+"><button style='background:none;border-style: none'>Online</button></a></div></div><div class='modal-footer' style='background-color:red'><button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button></div></div></div></div>"+
+                        "<i class='mx-2 fas fa-solid fa-trash fa-lg btn delete' data-toggle='tooltip' data-placement='bottom'  title='' aria-hidden='true' data-original-title='More Info.' style='color:gold;' type='button'></i><span class='sr-only'>Delete.</span></div><p></p></div></div>")
+                        $("#mark").append($nodes)
+        }
+        }
+    $(document).ready(function(){
+        cards()
+        $(".hide").hide()
+        $(".photo").mouseenter(function(){
+        $nod=$(this).parent().children(".hide").show();
+         });
+
+        $(".delete").click(function(){
+            $node=$(this).parent().parent().parent().remove();
+        });
+        function onSuccess(position){
+        window.alert("Thank you for giving up your location")
+      let {latitude,longitude}=position.coords;
+      console.log(latitude,longitude)
+      loc=latitude;
+      poc=longitude;
+      check=1
+    }
+    function onError(error){
+      if(error.code==1){
+        window.alert("Your Blocked your location please allow us to use your Location")
+      }else if(error.code==1){
+        window.alert("Your location now avilable")
+      }else{
+        window.alert("Your browser not supported")
+      }
+    }
+    $(".location").click(function(){
+        if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(onSuccess,onError);
+        }
+        else{
+        window.alert("Your browser not supported")
+        }
+    })
+    $(".check").click(function(){
+        if(check==1){
+         var alt = $(this).attr("alt")
+        var map="https://www.google.com/maps/search/"+alt+'/@'+loc+','+poc
+        window.open(map)
+        check=0
+        }
+        else{
+        window.alert("First Allow us to use your location husing the Get location button")
+        }
+    })
+    })
+        </script>

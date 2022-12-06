@@ -1,0 +1,477 @@
+            <style>
+                .box {
+  position: relative;
+}
+.box::before {
+  content: "";
+  width: 300px;
+  height: 300px;
+  background-color: #89cff0;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+.box-body {
+  position: relative;
+  height: 150px;
+  width: 150px;
+  margin-top: 123.3333333333px;
+  margin-left: 25px;
+  background-color: #cc231e;
+  border-bottom-left-radius: 5%;
+  border-bottom-right-radius: 5%;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(#762c2c,#ff0303);
+}
+.box-body .img{
+  opacity: 0;
+  transform: translateY(0%);
+  transition: all 0.5s;
+  margin: 0 auto;
+  display: block;
+}
+.box-body:hover {
+  cursor: pointer;
+  -webkit-animation: box-body 1s forwards ease-in-out;
+          animation: box-body 1s forwards ease-in-out;
+}
+.box-body:hover .img{
+  opacity: 1;
+  z-index: 0;
+  transform: translateY(-157px);
+
+
+   
+}
+.box-body:hover .box-lid {
+  -webkit-animation: box-lid 1s forwards ease-in-out;
+          animation: box-lid 1s forwards ease-in-out;
+}
+.box-body:hover .box-bowtie::before {
+  -webkit-animation: box-bowtie-left 1.1s forwards ease-in-out;
+          animation: box-bowtie-left 1.1s forwards ease-in-out;
+}
+.box-body:hover .box-bowtie::after {
+  -webkit-animation: box-bowtie-right 1.1s forwards ease-in-out;
+          animation: box-bowtie-right 1.1s forwards ease-in-out;
+}
+.box-body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 50px;
+  background: linear-gradient(#ffffff,#ffefa0)
+}
+.box-lid {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: 90%;
+  height: 40px;
+  background-color: #cc231e;
+  height: 40px;
+  width: 160px;
+  border-radius: 5%;
+  box-shadow: 0 8px 4px -4px rgba(0, 0, 0, 0.3);
+}
+.box-lid::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 50px;
+  background: linear-gradient(#ffefa0,#fff)
+}
+.box-bowtie {
+  z-index: 1;
+  height: 100%;
+}
+.box-bowtie::before, .box-bowtie::after {
+  content: "";
+  width: 83.3333333333px;
+  height: 83.3333333333px;
+  border: 16.6666666667px solid white;
+  border-radius: 50% 50% 0 50%;
+  position: absolute;
+  bottom: 99%;
+  z-index: -1;
+}
+.box-bowtie::before {
+  left: 50%;
+  -webkit-transform: translateX(-100%) skew(10deg, 10deg);
+          transform: translateX(-100%) skew(10deg, 10deg);
+}
+.box-bowtie::after {
+  left: 50%;
+  -webkit-transform: translateX(0%) rotate(90deg) skew(10deg, 10deg);
+          transform: translateX(0%) rotate(90deg) skew(10deg, 10deg);
+}
+
+@-webkit-keyframes box-lid {
+  0%,
+  42% {
+    -webkit-transform: translate3d(-50%, 0%, 0) rotate(0deg);
+            transform: translate3d(-50%, 0%, 0) rotate(0deg);
+  }
+  60% {
+    -webkit-transform: translate3d(-85%, -230%, 0) rotate(-25deg);
+            transform: translate3d(-85%, -230%, 0) rotate(-25deg);
+  }
+  90%, 100% {
+    -webkit-transform: translate3d(-119%, 225%, 0) rotate(-70deg);
+            transform: translate3d(-119%, 225%, 0) rotate(-70deg);
+  }
+}
+
+@keyframes box-lid {
+  0%,
+  42% {
+    -webkit-transform: translate3d(-50%, 0%, 0) rotate(0deg);
+            transform: translate3d(-50%, 0%, 0) rotate(0deg);
+  }
+  60% {
+    -webkit-transform: translate3d(-85%, -230%, 0) rotate(-25deg);
+            transform: translate3d(-85%, -230%, 0) rotate(-25deg);
+  }
+  90%, 100% {
+    -webkit-transform: translate3d(-119%, 225%, 0) rotate(-70deg);
+            transform: translate3d(-119%, 225%, 0) rotate(-70deg);
+  }
+}
+@-webkit-keyframes box-body {
+  0% {
+    -webkit-transform: translate3d(0%, 0%, 0) rotate(0deg);
+            transform: translate3d(0%, 0%, 0) rotate(0deg);
+  }
+  25% {
+    -webkit-transform: translate3d(0%, 25%, 0) rotate(20deg);
+            transform: translate3d(0%, 25%, 0) rotate(20deg);
+  }
+  50% {
+    -webkit-transform: translate3d(0%, -15%, 0) rotate(0deg);
+            transform: translate3d(0%, -15%, 0) rotate(0deg);
+  }
+  70% {
+    -webkit-transform: translate3d(0%, 0%, 0) rotate(0deg);
+            transform: translate3d(0%, 0%, 0) rotate(0deg);
+  }
+}
+@keyframes box-body {
+  0% {
+    -webkit-transform: translate3d(0%, 0%, 0) rotate(0deg);
+            transform: translate3d(0%, 0%, 0) rotate(0deg);
+  }
+  25% {
+    -webkit-transform: translate3d(0%, 25%, 0) rotate(20deg);
+            transform: translate3d(0%, 25%, 0) rotate(20deg);
+  }
+  50% {
+    -webkit-transform: translate3d(0%, -15%, 0) rotate(0deg);
+            transform: translate3d(0%, -15%, 0) rotate(0deg);
+  }
+  70% {
+    -webkit-transform: translate3d(0%, 0%, 0) rotate(0deg);
+            transform: translate3d(0%, 0%, 0) rotate(0deg);
+  }
+}
+@-webkit-keyframes box-bowtie-right {
+  0%,
+  50%,
+  75% {
+    -webkit-transform: translateX(0%) rotate(90deg) skew(10deg, 10deg);
+            transform: translateX(0%) rotate(90deg) skew(10deg, 10deg);
+  }
+  90%,
+  100% {
+    -webkit-transform: translate(-50%, -15%) rotate(45deg) skew(10deg, 10deg);
+            transform: translate(-50%, -15%) rotate(45deg) skew(10deg, 10deg);
+    box-shadow: 0px 4px 8px -4px rgba(0, 0, 0, 0.3);
+  }
+}
+@keyframes box-bowtie-right {
+  0%,
+  50%,
+  75% {
+    -webkit-transform: translateX(0%) rotate(90deg) skew(10deg, 10deg);
+            transform: translateX(0%) rotate(90deg) skew(10deg, 10deg);
+  }
+  90%,
+  100% {
+    -webkit-transform: translate(-50%, -15%) rotate(45deg) skew(10deg, 10deg);
+            transform: translate(-50%, -15%) rotate(45deg) skew(10deg, 10deg);
+    box-shadow: 0px 4px 8px -4px rgba(0, 0, 0, 0.3);
+  }
+}
+@-webkit-keyframes box-bowtie-left {
+  0% {
+    -webkit-transform: translateX(-100%) rotate(0deg) skew(10deg, 10deg);
+            transform: translateX(-100%) rotate(0deg) skew(10deg, 10deg);
+  }
+  50%,
+  75% {
+    -webkit-transform: translate(-50%, -15%) rotate(45deg) skew(10deg, 10deg);
+            transform: translate(-50%, -15%) rotate(45deg) skew(10deg, 10deg);
+  }
+  90%,
+  100% {
+    -webkit-transform: translateX(-100%) rotate(0deg) skew(10deg, 10deg);
+            transform: translateX(-100%) rotate(0deg) skew(10deg, 10deg);
+  }
+}
+@keyframes box-bowtie-left {
+  0% {
+    -webkit-transform: translateX(-100%) rotate(0deg) skew(10deg, 10deg);
+            transform: translateX(-100%) rotate(0deg) skew(10deg, 10deg);
+  }
+  50%,
+  75% {
+    -webkit-transform: translate(-50%, -15%) rotate(45deg) skew(10deg, 10deg);
+            transform: translate(-50%, -15%) rotate(45deg) skew(10deg, 10deg);
+  }
+  90%,
+  100% {
+    -webkit-transform: translateX(-100%) rotate(0deg) skew(10deg, 10deg);
+            transform: translateX(-100%) rotate(0deg) skew(10deg, 10deg);
+  }
+}
+h5{
+    font-family: 'Zen Dots', cursive;
+    color:white;
+}
+.cl{
+    font-family: 'Zen Dots', cursive;
+    color:white;
+}
+</style>
+            <section class="services" id="info_tab" style="text-align:center">
+                <img src="../images/tree.png">
+                <h3 class="text-primary">Gifts</h3>
+                     <div class="row justify-content-center" id="mark">         
+                    </div>
+            </section>
+        <script>
+    var value_array = [
+    'aerogarden+harvest+elite+360',
+    'airphysio+health+&+wellness+natural+device',
+    'anti+oil+splas+gloves',
+    'bed+cane+assist+rail',
+    'blood+pressure+and+heart+rate+monitor+activity+tracker',
+    'caregiver+pager+call+button',
+    'caregiver+pager+wireless+call+button+for+elderly',
+    'chefco+kitchen+gadgets',
+    'cookware+sets',
+    'd+19+healthy+heart+rate+exercise+meter',
+    'electronic+visual+aid',
+    'flip+up+screw+in+bathroom+grab+bar',
+    'gardening+apron',
+    'gardening+tool+set',
+    'hands+free+magnifier+and+stand',
+    'heavy+duty+gardening+tool+set',
+    'keyboard+waffle+iron',
+    'looke+led+tens+unit+muscle+stimulator',
+    'neck+massager+u+shape',
+    'plastic+freestanding+transfer+bench',
+    'purple+gradening+tool+set',
+    'safe+sound+personal+alarm',
+    'senior+fall+detector',
+    'shower+stool+chair',
+    'silicone+snap+strainer',
+    'solar+watering+can+with+lights',
+    'sous+vide+immersion',
+    'standard+ez+adjust+bed+rail',
+    'stander+pt+bed+cane',
+    'wellue+blood+oxygen+saturation+monitor'
+]
+var gift_title=[
+    'Aerogarden Harvest Elite 360',
+    'Airphysio Health & Wellness Natural Device',
+    'Anti Oil Splash Gloves',
+    'Bed Cane Assist Rail',
+    'Blood Pressure & Heart Rate Monitor Activity Tracker',
+    'Caregiver Pager Call Button',
+    'Caregiver Pager Wireless Call Button For Elderly',
+    'Chefco Kitchen Gadgets',
+    'Cookware Sets',
+    'D 19 Healthy Heart Rate Exercie Meter',
+    'Electronic Visual Aid',
+    'Flip up Srew in Bathroon Grab Bar',
+    'Gardening Apron with pockets',
+    'Gardening Tool Set',
+    'Hands Free Magnifier & Stand',
+    'Heavy Duty Gardening Tool Set',
+    'Keyboard Waffel Iron',
+    'Looke Led Ten Unit Muscle Stimulator',
+    'Neck Massager u Shape',
+    'Plastic Freestanding Transfer Bench',
+    'Purple Gardening Tool Set',
+    'Safe Sound Personal Alarm',
+    'Senior Fall Dectector',
+    'Shower Stool Chair',
+    'Silicone Snap Strainer',
+    'Solar Watering Can With Lights',
+    'Sous Vide Immersion',
+    'Stardard Ez Adjust Bed Rail',
+    'Stander Pt Bed Cane',
+    'Wellue Blood Oxygen Saturation Monitor'
+]
+var image_array = [
+    'aerogarden_harvest_elite_360.jpg',
+    'airphysio_health_&_wellness_natural_device.jpg',
+    'anti_oil_splash_gloves.jpg',
+    'bed_cane_assist_rail.jpg',
+    'blood_pressure_and_heart_rate_monitor_activity_tracker.jpg',
+    'caregiver_pager_call_button.jpg',
+    'caregiver_pager_wireless_call_button_for_elderly.jpg',
+    'chefco_kitchen_gadgets.jpg',
+    'cookware_sets.jpg',
+    'd_19_healthy_heart_rate_exercise_meter.jpg',
+    'electronic_visual_aid.jpg',
+    'flip_up_screw_in_bathroom_grab_bar.jpg',
+    'gardening_apron.jpg',
+    'gardening_tool_set.jpg',
+    'hands_free_magnifier_and_stand.jpg',
+    'heavy_duty_gardening_tool_set.jpg',
+    'keyboard_waffle_iron.jpg',
+    'lookee_led_tens_unit_muscle_stimulator.jpg',
+    'neck_massager_u_shape.jpg',
+    'plastic_freestanding_transfer_bench.jpg',
+    'purple_gardening_tool_set.jpg',
+    'safe_sound_personal_alarm.jpg',
+    'senior_fall_detector.jpg',
+    'shower_stool_chair.jpg',
+    'silicone_snap_strainer.jpg',
+    'solar_watering_can_with_lights.jpg',
+    'sous_vide_immersion.jpg',
+    'standard_ez_adjust_bed_rail.jpg',
+    'stander_pt_bed_cane.jpg',
+    'wellue_blood_oxygen_saturation_monitor.jpg'
+]
+var links_array=[
+    "https://www.kohls.com/product/prd-3435816/aerogardenharvest-elite-360with-gourmet-herb-seed-pod-kit.jsp?skuid=68185614&CID=seo_offers&utm_campaign=SAG&utm_medium=organic&utm_source=google&utm_product=68185614",
+    "https://www.walmart.com/ip/AirPhysio-Health-Wellness-Natural-Device/1390372290",
+    "https://www.amazon.com/Novelty-Kitchen-Anti-oil-Detachable-Protector/dp/B083DVC8FX?th=1",
+    "https://www.amazon.com/Bedrails-Mattress-Adjustable-Transfer-Prevention/dp/B083W4YW4F",
+    "https://www.walmart.com/ip/Mildsown-Unisex-Smart-Bracelet-Heart-Rate-Monitor-Blood-Step-Counter-Fitness-Tracker-Wristband-Outdoor-Wrist-Accessory/606175093?wmlspartner=wlpa&selectedSellerId=18988",
+    "https://www.amazon.com/CallToU-Caregiver-Disabled-Receiver-Transmitter/dp/B092DJ3RCT?th=1",
+    "https://www.amazon.com/Caregiver-Wireless-Monitoring-Portable-Emergency/dp/B09SPSK3V6?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=ACCK3J9N6CU5C",
+    "https://www.ebay.com/itm/133469797798",
+    "https://www.walmart.com/ip/Silicone-Kitchenwares-10Pcs-set-Durable-Practical-Heat-Resistant-Kitchen-Tool-Cookware-Sets-New/1503047018?wmlspartner=wlpa&selectedSellerId=18988",
+    "https://www.walmart.com/ip/Hueook-D19-Healthy-Heart-Rate-Exercise-Meter-Step-Call-Message-Synchronous-Reminder-Bluetooth-Smart-Bracelet-Sleep-Monitoring-Sedentary-Reminder/1907964104?wmlspartner=wlpa&selectedSellerId=101224508",
+    "https://www.walmart.com/ip/LYUMO-Electronic-Visual-Aid-Digital-Video-Magnifier-5-Inch-LCD-Low-Digital-Magnifier-Electronic-Reading-Aid-US110-240V-4-32X-HD-Visual-Aid/563144727?wmlspartner=wlpa&selectedSellerId=101174264",
+    "https://www.amazon.com/Moen-R8960FD-Bathroom-Textured-Stainless/dp/B0045EKC7I?th=1",
+    "https://www.walmart.com/ip/Cheers-US-Garden-Apron-with-Pockets-for-Harvesting-Weeding-and-Garden-Tools-Machine-Washable-Canvas-Cotton-with-Water-Resistant-Lining/1710334445?wmlspartner=wlpa&selectedSellerId=101043410",
+    "https://www.amazon.com/Gardening-Garden-Digging-Planting-Supplies/dp/B07BS1R5VY?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&smid=A13TD3QSKKVPUQ&th=1",
+    "https://www.amazon.com/S-RICHARDS-2169-Hands-Free-Magnifier/dp/B0044JPQMK/ref=asc_df_B0044JPQMK/?tag=hyprod-20&linkCode=df0&hvadid=241888741849&hvpos=&hvnetw=g&hvrand=14721905978842727133&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9007229&hvtargid=pla-485429845637&psc=1",
+    "https://www.homedepot.com/p/8-Piece-Stainless-Steel-Extra-Heavy-Duty-Garden-Tool-Set-with-Basket-B08T8VNQJ5/321307341?source=shoppingads&locale=en-US",
+    "https://www.amazon.in/The-Keyboard-Waffle-Iron-CES01/dp/B015QJPUOA",
+    "https://www.lookeetech.com/products/lookee-led-tens-unit-ems-muscle-stimulator-with-red-led-light-therapy",
+    "https://www.walmart.com/ip/Thinsont-Neck-Massager-U-shape-Intelligent-Electric-Pulse-Back-Cervical-Care-Spine-Pain-Massage-Machine/1725857050?wmlspartner=wlpa&selectedSellerId=101130009",
+    "https://www.lowes.com/pd/Moen-White-Plastic-Freestanding-Transfer-Bench/5003466537?user=shopping",
+    "https://www.homedepot.com/p/10-Piece-Gardening-Hand-Tools-with-Purple-Carrying-Case-Garden-Tools-Set-B086C7SDP7/322311402?source=shoppingads&locale=en-US",
+    "https://www.amazon.com/Personal-KOSIN-Security-Keychain-Emergency/dp/B07DMT8SLQ?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=A3HS4YB1L2VPG2",
+    "https://www.walmart.com/ip/Walabot-HOME-Fall-Detector-Senior-Elderly-Aid-No-Monthly-Fee/717175363?wmlspartner=wlpa&selectedSellerId=2094",
+    "https://www.amazon.com/Carex-Seniors-Elderly-Handicap-Disabled/dp/B00NIAPE64",
+    "https://www.amazon.com/FineGood-Collapsible-Hands-Free-Resistant-Vegetable/dp/B074KFKTKR?th=1",
+    "https://www.amazon.com/Afootry-Waterproof-Landscape-Decorations-Clearance/dp/B0B28V2G36",
+    "https://www.amazon.ca/Instant-Pot-Accu-SV800-Circulator/dp/B01JNKEMH4",
+    "https://senior.com/products/stander-ez-adjust-pivoting-adult-home-bed-rail", 
+    "https://www.walmart.com/ip/Stander-PT-Bed-Cane-Adult-Bed-Assist-Bar-Adjustable-Assist-Handle-Grab-Bar/55190284",
+    "https://www.walmart.com/ip/Wellue-Blood-Oxygen-Saturation-Monitor-Overnight-Sleep-Pulse-Oximeter-for-Home-Use-Finger-Wearable-Pulse-Rate-Tracker-Bluetooth-and-Free-App-WearO2/363752218?wmlspartner=wlpa&selectedSellerId=101103633"
+]
+var images=[]
+var valuse=[]
+var link=[]
+var gift=[]
+function get_random_image(){
+  for (var i=0, tempimg=image_array,tempval=value_array,temlink=links_array,temgift=gift_title;i<image_array.length;i++){
+    random_index= Math.floor(Math.random()* tempimg.length);
+    images.push(tempimg[random_index])
+    valuse.push(tempval[random_index])
+    link.push(temlink[random_index])
+    gift.push(temgift[random_index])
+    tempimg.splice(random_index,1)
+    tempval.splice(random_index,1)
+    temlink.splice(random_index,1)
+    temgift.splice(random_index,1)
+  }
+}
+  get_random_image()
+          var check=0
+          var loc=""
+          var poc=""
+    function cards(){
+        for(var x=0; x<8; x+=1){
+            var mod="#Modal"+x
+            var modid="Modal"+x
+                $nodes=$("<div class='row justify-content-center' id='mark'></div>").html=("<div class='card col-10 col-md-5 col-xl-3 col-xl-2-5 mx-auto my-3' style='background-color:green;'><div class='card-body'>"+
+                        "<div class='container photo'><div class='row'><div class='col-12 mt-5 d-flex justify-content-center'><div class='box-body'><img class='img' src=../img/senior/"+images[x]+"  value='no' alt="+valuse[x]+ " style='width:150px;height:150px'>"+
+                        "<div class='box-lid'><div class='box-bowtie'></div></div></div></div></div></div><hr><div class='hide'><i class='mx-2 fas fa-info-circle fa-lg' class='btn' title='More Info' type='button' data-toggle='modal' data-target="+mod+" style='color:gold;'></i><span class='sr-only'>More Info.</span>"+
+                        "<div class='modal fade' id="+modid+" tabindex='-1' aria-labelledby='Label' aria-hidden='true'><div class='modal-dialog'><div class='modal-content'><div class='modal-header' style='background-color: red;'><h5 class='modal-title' id='Label'>Information on gift</h5><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span>"+
+                        "</button></div><div class='modal-body' style='background-color: green;'><img class='img' src=../img/senior/"+images[x]+" alt="+valuse[x]+" style='width:150px;height:150px'><div class='cl'>"+gift[x]+"</div><div class='cl'>Location:<button class='location' style='background:none;border-style: none'>Allow loaction</button></div>"+
+                        "<div class='cl'>Find Near Me:<button class='check' alt="+valuse[x]+" style='background:none;border-style: none'>Click Here</button></div><div class='cl'>Link:<a href="+link[x]+"><button style='background:none;border-style: none'>Online</button></a></div></div><div class='modal-footer' style='background-color:red'><button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button></div></div></div></div>"+
+                        "<i class='mx-2 fas fa-solid fa-trash fa-lg btn delete' data-toggle='tooltip' data-placement='bottom'  title='' aria-hidden='true' data-original-title='More Info.' style='color:gold;' type='button'></i><span class='sr-only'>Delete.</span></div><p></p></div></div>")
+                        $("#mark").append($nodes)
+        }
+        }
+    $(document).ready(function(){
+        cards()
+        $(".hide").hide()
+        $(".photo").mouseenter(function(){
+        $nod=$(this).parent().children(".hide").show();
+         });
+
+        $(".delete").click(function(){
+            $node=$(this).parent().parent().parent().remove();
+        });
+        function onSuccess(position){
+            window.alert("Thank you for giving up your location")
+      let {latitude,longitude}=position.coords;
+      console.log(latitude,longitude)
+      loc=latitude;
+      poc=longitude;
+      check=1
+    }
+    function onError(error){
+      if(error.code==1){
+        window.alert("Your Blocked your location please allow us to use your Location")
+      }else if(error.code==1){
+        window.alert("Your location now avilable")
+      }else{
+        window.alert("Your browser not supported")
+      }
+    }
+    $(".location").click(function(){
+        if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(onSuccess,onError);
+        }
+        else{
+        window.alert("Your browser not supported")
+        }
+    })
+    $(".check").click(function(){
+        if(check==1){
+         var alt = $(this).attr("alt")
+        var map="https://www.google.com/maps/search/"+alt+'/@'+loc+','+poc
+        window.open(map)
+        check=0
+        }
+        else{
+        window.alert("First Allow us to use your location husing the Get location button")
+        }
+    })
+})
+
+        </script>

@@ -1,0 +1,463 @@
+<style>
+                .box {
+  position: relative;
+}
+.box::before {
+  content: "";
+  width: 300px;
+  height: 300px;
+  background-color: #89cff0;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+.box-body {
+  position: relative;
+  height: 150px;
+  width: 150px;
+  margin-top: 123.3333333333px;
+  margin-left: 25px;
+  background-color: #cc231e;
+  border-bottom-left-radius: 5%;
+  border-bottom-right-radius: 5%;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(#762c2c,#ff0303);
+}
+.box-body .img{
+  opacity: 0;
+  transform: translateY(0%);
+  transition: all 0.5s;
+  margin: 0 auto;
+  display: block;
+}
+.box-body:hover {
+  cursor: pointer;
+  -webkit-animation: box-body 1s forwards ease-in-out;
+          animation: box-body 1s forwards ease-in-out;
+}
+.box-body:hover .img{
+  opacity: 1;
+  z-index: 0;
+  transform: translateY(-157px);
+
+
+   
+}
+.box-body:hover .box-lid {
+  -webkit-animation: box-lid 1s forwards ease-in-out;
+          animation: box-lid 1s forwards ease-in-out;
+}
+.box-body:hover .box-bowtie::before {
+  -webkit-animation: box-bowtie-left 1.1s forwards ease-in-out;
+          animation: box-bowtie-left 1.1s forwards ease-in-out;
+}
+.box-body:hover .box-bowtie::after {
+  -webkit-animation: box-bowtie-right 1.1s forwards ease-in-out;
+          animation: box-bowtie-right 1.1s forwards ease-in-out;
+}
+.box-body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 50px;
+  background: linear-gradient(#ffffff,#ffefa0)
+}
+.box-lid {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: 90%;
+  height: 40px;
+  background-color: #cc231e;
+  height: 40px;
+  width: 160px;
+  border-radius: 5%;
+  box-shadow: 0 8px 4px -4px rgba(0, 0, 0, 0.3);
+}
+.box-lid::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 50px;
+  background: linear-gradient(#ffefa0,#fff)
+}
+.box-bowtie {
+  z-index: 1;
+  height: 100%;
+}
+.box-bowtie::before, .box-bowtie::after {
+  content: "";
+  width: 83.3333333333px;
+  height: 83.3333333333px;
+  border: 16.6666666667px solid white;
+  border-radius: 50% 50% 0 50%;
+  position: absolute;
+  bottom: 99%;
+  z-index: -1;
+}
+.box-bowtie::before {
+  left: 50%;
+  -webkit-transform: translateX(-100%) skew(10deg, 10deg);
+          transform: translateX(-100%) skew(10deg, 10deg);
+}
+.box-bowtie::after {
+  left: 50%;
+  -webkit-transform: translateX(0%) rotate(90deg) skew(10deg, 10deg);
+          transform: translateX(0%) rotate(90deg) skew(10deg, 10deg);
+}
+
+@-webkit-keyframes box-lid {
+  0%,
+  42% {
+    -webkit-transform: translate3d(-50%, 0%, 0) rotate(0deg);
+            transform: translate3d(-50%, 0%, 0) rotate(0deg);
+  }
+  60% {
+    -webkit-transform: translate3d(-85%, -230%, 0) rotate(-25deg);
+            transform: translate3d(-85%, -230%, 0) rotate(-25deg);
+  }
+  90%, 100% {
+    -webkit-transform: translate3d(-119%, 225%, 0) rotate(-70deg);
+            transform: translate3d(-119%, 225%, 0) rotate(-70deg);
+  }
+}
+
+@keyframes box-lid {
+  0%,
+  42% {
+    -webkit-transform: translate3d(-50%, 0%, 0) rotate(0deg);
+            transform: translate3d(-50%, 0%, 0) rotate(0deg);
+  }
+  60% {
+    -webkit-transform: translate3d(-85%, -230%, 0) rotate(-25deg);
+            transform: translate3d(-85%, -230%, 0) rotate(-25deg);
+  }
+  90%, 100% {
+    -webkit-transform: translate3d(-119%, 225%, 0) rotate(-70deg);
+            transform: translate3d(-119%, 225%, 0) rotate(-70deg);
+  }
+}
+@-webkit-keyframes box-body {
+  0% {
+    -webkit-transform: translate3d(0%, 0%, 0) rotate(0deg);
+            transform: translate3d(0%, 0%, 0) rotate(0deg);
+  }
+  25% {
+    -webkit-transform: translate3d(0%, 25%, 0) rotate(20deg);
+            transform: translate3d(0%, 25%, 0) rotate(20deg);
+  }
+  50% {
+    -webkit-transform: translate3d(0%, -15%, 0) rotate(0deg);
+            transform: translate3d(0%, -15%, 0) rotate(0deg);
+  }
+  70% {
+    -webkit-transform: translate3d(0%, 0%, 0) rotate(0deg);
+            transform: translate3d(0%, 0%, 0) rotate(0deg);
+  }
+}
+@keyframes box-body {
+  0% {
+    -webkit-transform: translate3d(0%, 0%, 0) rotate(0deg);
+            transform: translate3d(0%, 0%, 0) rotate(0deg);
+  }
+  25% {
+    -webkit-transform: translate3d(0%, 25%, 0) rotate(20deg);
+            transform: translate3d(0%, 25%, 0) rotate(20deg);
+  }
+  50% {
+    -webkit-transform: translate3d(0%, -15%, 0) rotate(0deg);
+            transform: translate3d(0%, -15%, 0) rotate(0deg);
+  }
+  70% {
+    -webkit-transform: translate3d(0%, 0%, 0) rotate(0deg);
+            transform: translate3d(0%, 0%, 0) rotate(0deg);
+  }
+}
+@-webkit-keyframes box-bowtie-right {
+  0%,
+  50%,
+  75% {
+    -webkit-transform: translateX(0%) rotate(90deg) skew(10deg, 10deg);
+            transform: translateX(0%) rotate(90deg) skew(10deg, 10deg);
+  }
+  90%,
+  100% {
+    -webkit-transform: translate(-50%, -15%) rotate(45deg) skew(10deg, 10deg);
+            transform: translate(-50%, -15%) rotate(45deg) skew(10deg, 10deg);
+    box-shadow: 0px 4px 8px -4px rgba(0, 0, 0, 0.3);
+  }
+}
+@keyframes box-bowtie-right {
+  0%,
+  50%,
+  75% {
+    -webkit-transform: translateX(0%) rotate(90deg) skew(10deg, 10deg);
+            transform: translateX(0%) rotate(90deg) skew(10deg, 10deg);
+  }
+  90%,
+  100% {
+    -webkit-transform: translate(-50%, -15%) rotate(45deg) skew(10deg, 10deg);
+            transform: translate(-50%, -15%) rotate(45deg) skew(10deg, 10deg);
+    box-shadow: 0px 4px 8px -4px rgba(0, 0, 0, 0.3);
+  }
+}
+@-webkit-keyframes box-bowtie-left {
+  0% {
+    -webkit-transform: translateX(-100%) rotate(0deg) skew(10deg, 10deg);
+            transform: translateX(-100%) rotate(0deg) skew(10deg, 10deg);
+  }
+  50%,
+  75% {
+    -webkit-transform: translate(-50%, -15%) rotate(45deg) skew(10deg, 10deg);
+            transform: translate(-50%, -15%) rotate(45deg) skew(10deg, 10deg);
+  }
+  90%,
+  100% {
+    -webkit-transform: translateX(-100%) rotate(0deg) skew(10deg, 10deg);
+            transform: translateX(-100%) rotate(0deg) skew(10deg, 10deg);
+  }
+}
+@keyframes box-bowtie-left {
+  0% {
+    -webkit-transform: translateX(-100%) rotate(0deg) skew(10deg, 10deg);
+            transform: translateX(-100%) rotate(0deg) skew(10deg, 10deg);
+  }
+  50%,
+  75% {
+    -webkit-transform: translate(-50%, -15%) rotate(45deg) skew(10deg, 10deg);
+            transform: translate(-50%, -15%) rotate(45deg) skew(10deg, 10deg);
+  }
+  90%,
+  100% {
+    -webkit-transform: translateX(-100%) rotate(0deg) skew(10deg, 10deg);
+            transform: translateX(-100%) rotate(0deg) skew(10deg, 10deg);
+  }
+}
+h5{
+    font-family: 'Zen Dots', cursive;
+    color:white;
+}
+.cl{
+    font-family: 'Zen Dots', cursive;
+    color:white;
+}
+            </style>
+            <section class="services" id="info_tab" style="text-align:center">
+                <img src="../images/tree.png">
+                <h3 class="text-primary">Gifts</h3>
+                     <div class="row justify-content-center" id="mark">         
+                    </div>
+            </section>
+         <script>
+        var value_array=[
+    'animal+fruit+pacifiers',
+    'baby+animal+crater',
+    'baby+backpack',
+    'baby+bib+set',
+    'baby+bottle+backpack',
+    'baby+car+seats+strollers',
+    'baby+red+dress+set',
+    'baby+shoes',
+    'baby+bath+assitance',
+    'baby+blue+cradle',
+    'car+seat+toy',
+    'baby+christmas+bedding+set',
+    'family+christmas+pajamas',
+    'first+christmas+dress+set',
+    'baby+guitar+set',
+    'infant+toilet+watcher',
+    'lion+slide+set',
+    'think+and+learn+rocktopus',
+    'monkey+drum+set',
+    'music+stroller',
+    'no+tears+container',
+    'sandbox+set',
+    'santa+dress',
+    'santa+hat+set',
+    'santa+robe',
+    'stuffed+animal',
+    'winter+bedding+set',
+]
+var gift_array=[
+    'Animal fruit pacifiers',
+    'Baby Animal Crater',
+    'Baby Backpack',
+    'Baby Bib set',
+    'Baby bottle backpack',
+    'Baby Car Seats Strollers',
+    'Baby Red Dress Set',
+    'Baby Shoes',
+    'Baby Bath Assitance',
+    'Baby Blue Cradle',
+    'Car Seat Toys',
+    'Baby Christmas bedding set',
+    'Family Christmas Pajamas',
+    'First Christmas Dress Set',
+    'Baby Guitar Set',
+    'Infant toilet Watcher',
+    'Lion Slide Set',
+    'Think and Learn Rocktopus',
+    'Monkey Drum Set',
+    'Music Stroller',
+    'No tears Container',
+    'Sandbox Set',
+    'Santa Dress',
+    'Santa Hat Set',
+    'Santa Robe',
+    'Toddler Girl Sherpa Jacket with Ear Hood Full Zip',
+    'Winter Bedding Set',
+]
+var image_array = [
+    'animal_fruit_pacifiers.jpg',
+    'baby_animal_crater.jpg',
+    'baby_backpack.jpg',
+    'baby_bib_set.jpg',
+    'baby_bottle_backpack.jpg',
+    'baby_car_seats_strollers.jpg',
+    'baby_red_dress_set.jpg',
+    'baby_shoes.jpg',
+    'bath_assistance.jpg',
+    'blue_cradle.jpg',
+    'car_seat_toy.jpg',
+    'christmas_bedding_set.jpg',
+    'family_christmas_pajamas.jpg',
+    'first_christmas_dress_set.jpg',
+    'guitar_set.jpg',
+    'infant_toilet_watcher.jpg',
+    'lion_slide_set.jpg',
+    'think_and_learn_rocktopus.jpg',
+    'monkey_drum_set.png',
+    'music_stroller.jpg',
+    'no_tears_container.jpg',
+    'sandbox_set.jpg',
+    'santa_dress.jpg',
+    'santa_hat_set.jpg',
+    'santa_robe.jpg',
+    'stuffed_animal.jpg',
+    'winter_bedding_set.jpg'
+]
+var links_array=[
+    "https://www.bedbathandbeyond.com/store/product/sperric-baby-teething-toys-for-newborn-5-pack-freezer-safe-bpa-free-infant-and-toddler-silicone-teethers-soothe-babies-gums-perfect-baby-gift/300239732",
+    "https://www.amazon.com/Fisher-Price-CBV63-Roarin-Rainforest-Jumperoo/dp/B014D4H7C2",
+    "https://www.walmart.com/ip/WiseWater-Changing-Station-and-Pad-Included-Large-Capacity-Adjustable-Shoulder-Straps-Waterproof-Easy-to-Clean-Backpack-Diaper-Bag-Black/751382473",
+    "https://www.gearbest.com/baby-care/pp_1499667.html",
+    "https://www.walmart.com/ip/3-1-Portable-Baby-Diaper-Backpack-Changing-Pad-Multifunction-Foldable-Bed-Large-Capacity-Waterproof-Travel-Bag-Nappy-Crib-Shade-Cloth-Mattress-Free-S/1193063988?wmlspartner=wlpa&selectedSellerId=101206088",
+    "https://www.ebay.com/itm/274856274053",
+    "https://www.mirraw.com/designers/woonie/designs/woonie-handmade-crochet-heay-flare-red-frock-with-cap-and-booties-kids-frock?country_code=US",
+    "https://www.amazon.com/Ohwawadi-Booties-Newborn-Slippers-Christmas/dp/B08F59QYDZ?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=A10EZDSCKKPQ0E",
+    "https://www.thetot.com/product/4moms-infant-tub/",
+    "https://www.walmart.com/ip/Infantino-2-in-1-Sit-Spin-Stand-Entertainer-Activity-Table/409838708",
+    "https://www.amazon.com/Zerodis-Butterflies-Activity-Stroller-Multicolor/dp/B098K9QJSJ?th=1",
+    "https://www.walmart.com/ip/Christmas-Duvet-Cover-Set-King-Santa-Claus-Reinde/1678056595?wmlspartner=wlpa&selectedSellerId=101087374",
+    "https://www.amazon.com/Benaive-Matching-Christmas-Toddlers-Sleepwear/dp/B08D9HNSNZ?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=AMMKT4YCEMVJA",
+    "https://www.amazon.com/Toddler-Clothes-Outfits-Christmas-Hairband/dp/B0811L3CT2",
+    "https://www.amazon.com/Fisher-Price-Classic-Music-Record-Player/dp/B01MCVSZQZ",
+    "https://www.amazon.com/Miku-Smart-Baby-Monitor-Contact-Free/dp/B07N6NBRGD",
+    "https://www.walmart.com/ip/Fisher-Price-Drop-n-Roar-Simba/23583147?wmlspartner=wlpa&selectedSellerId=0",
+    "https://www.amazon.com/Fisher-Price-FXW98-Think-Learn-Rocktopus/dp/B079JS53W1",
+    "https://www.walmart.com/ip/VTech-Baby-Beats-Monkey-Drum-Fun-Animated-Music-Toy-for-Infant/54932389?wmlspartner=wlpa&selectedSellerId=0",
+    "https://www.walmart.com/ip/VTech-Stroll-and-Discover-Activity-Walker-2-in-1-Toddler-Toy-936-months/965565931?wmlspartner=wlpa&selectedSellerId=0",
+    "https://www.gearbest.com/other-bathroom-accessories/pp_1602214.html",
+    "https://www.amazon.com/Amor-Beach-Water-Toddlers-Outdoor/dp/B085S142Y3",
+    "https://www.kohls.com/product/prd-5763751/toddler-girl-bonnie-jean-sequin-santa-dress.jsp?skuid=79127952&CID=seo_offers&utm_campaign=SAG&utm_medium=organic&utm_source=google&utm_product=79127952",
+    "https://www.walmart.com/ip/Wetopw-Christmas-Hat-Santa-Hat-Xmas-Holiday-Hat-for-Adults-Unisex-Comfort-Cap-WD/1545515060?wmlspartner=wlpa&selectedSellerId=101120518",
+    "https://www.walmart.com/ip/Hudson-Baby-Infant-Plush-Animal-Face-Bathrobe-Santa-0-9-Months/996111730?wmlspartner=wlpa&selectedSellerId=170", 
+    "https://www.amazon.com/LittleSpring-Toddler-Girl-Sherpa-Jacket/dp/B08GPKXQLJ",
+    "https://www.walmart.com/ip/3-In-1-Rocker-Napper-Brown/20585537?wmlspartner=wlpa&selectedSellerId=0",
+    ]
+var images=[]
+var valuse=[]
+var link=[]
+var gift=[]
+function get_random_image(){
+  for (var i=0, tempimg=image_array,tempval=value_array,temlink=links_array,temgif=gift_array;i<image_array.length;i++){
+    random_index= Math.floor(Math.random()* tempimg.length);
+    images.push(tempimg[random_index])
+    valuse.push(tempval[random_index])
+    link.push(temlink[random_index])
+    gift.push(temgif[random_index])
+    tempimg.splice(random_index,1)
+    tempval.splice(random_index,1)
+    temlink.splice(random_index,1)
+    temgif.splice(random_index,1)
+  }
+}
+  get_random_image()
+          var check=0
+          var loc=""
+          var poc=""
+    function cards(){
+        for(var x=0; x<8; x+=1){
+            var mod="#Modal"+x
+            var modid="Modal"+x
+                $nodes=$("<div class='row justify-content-center' id='mark'></div>").html=("<div class='card col-10 col-md-5 col-xl-3 col-xl-2-5 mx-auto my-3' style='background-color:green;'><div class='card-body'>"+
+                        "<div class='container photo'><div class='row'><div class='col-12 mt-5 d-flex justify-content-center'><div class='box-body'><img class='img' src=../img/baby/"+images[x]+"  value='no' alt="+valuse[x]+ " style='width:150px;height:150px'>"+
+                        "<div class='box-lid'><div class='box-bowtie'></div></div></div></div></div></div><hr><div class='hide'><i class='mx-2 fas fa-info-circle fa-lg' class='btn' title='More Info' type='button' data-toggle='modal' data-target="+mod+" style='color:gold;'></i><span class='sr-only'>More Info.</span>"+
+                        "<div class='modal fade' id="+modid+" tabindex='-1' aria-labelledby='Label' aria-hidden='true'><div class='modal-dialog'><div class='modal-content'><div class='modal-header' style='background-color: red;'><h5 class='modal-title' id='Label'>Information on gift</h5><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span>"+
+                        "</button></div><div class='modal-body' style='background-color: green;''><img class='img' src=../img/baby/"+images[x]+" alt="+valuse[x]+" style='width:150px;height:150px'><div class='cl'>"+gift[x]+"</div><div class='cl'>Location:<button class='location' style='background:none;border-style: none'>Allow loaction</button></div>"+
+                        "<div class='cl'>Find Near Me:<button class='check' alt="+valuse[x]+" style='background:none;border-style: none'>Click Here</button></div><div class='cl'>Link:<a href="+link[x]+"><button style='background:none;border-style: none'>Online</button></a></div></div><div class='modal-footer' style='background-color:red'><button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button></div></div></div></div>"+
+                        "<i class='mx-2 fas fa-solid fa-trash fa-lg btn delete' data-toggle='tooltip' data-placement='bottom'  title='' aria-hidden='true' data-original-title='More Info.' style='color:gold;' type='button'></i><span class='sr-only'>Delete.</span></div><p></p></div></div>")
+                        $("#mark").append($nodes)
+        }
+        }
+    $(document).ready(function(){
+        cards()
+        $(".hide").hide()
+        $(".photo").mouseenter(function(){
+        $nod=$(this).parent().children(".hide").show();
+         });
+
+        $(".delete").click(function(){
+            $node=$(this).parent().parent().parent().remove();
+        });
+        function onSuccess(position){
+            window.alert("Thank you for giving up your location")
+      let {latitude,longitude}=position.coords;
+      console.log(latitude,longitude)
+      loc=latitude;
+      poc=longitude;
+      check=1
+    }
+    function onError(error){
+      if(error.code==1){
+        window.alert("Your Blocked your location please allow us to use your Location")
+      }else if(error.code==1){
+        window.alert("Your location now avilable")
+      }else{
+        window.alert("Your browser not supported")
+      }
+    }
+    $(".location").click(function(){
+        if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(onSuccess,onError);
+        }
+        else{
+        window.alert("Your browser not supported")
+        }
+    });
+    $(".check").click(function(){
+        if(check==1){
+        var alt = $(this).attr("alt")
+        var map="https://www.google.com/maps/search/"+alt+'/@'+loc+','+poc
+        window.open(map)
+        check=0
+        }
+        else{
+        window.alert("First Allow us to use your location husing the Get location button")
+        }
+    });
+    })

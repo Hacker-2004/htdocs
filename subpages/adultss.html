@@ -1,0 +1,476 @@
+<style>
+                .box {
+  position: relative;
+}
+.box::before {
+  content: "";
+  width: 300px;
+  height: 300px;
+  background-color: #89cff0;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+.box-body {
+  position: relative;
+  height: 150px;
+  width: 150px;
+  margin-top: 123.3333333333px;
+  margin-left: 25px;
+  background-color: #cc231e;
+  border-bottom-left-radius: 5%;
+  border-bottom-right-radius: 5%;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(#762c2c,#ff0303);
+}
+.box-body .img{
+  opacity: 0;
+  transform: translateY(0%);
+  transition: all 0.5s;
+  margin: 0 auto;
+  display: block;
+}
+.box-body:hover {
+  cursor: pointer;
+  -webkit-animation: box-body 1s forwards ease-in-out;
+          animation: box-body 1s forwards ease-in-out;
+}
+.box-body:hover .img{
+  opacity: 1;
+  z-index: 0;
+  transform: translateY(-157px);
+
+
+   
+}
+.box-body:hover .box-lid {
+  -webkit-animation: box-lid 1s forwards ease-in-out;
+          animation: box-lid 1s forwards ease-in-out;
+}
+.box-body:hover .box-bowtie::before {
+  -webkit-animation: box-bowtie-left 1.1s forwards ease-in-out;
+          animation: box-bowtie-left 1.1s forwards ease-in-out;
+}
+.box-body:hover .box-bowtie::after {
+  -webkit-animation: box-bowtie-right 1.1s forwards ease-in-out;
+          animation: box-bowtie-right 1.1s forwards ease-in-out;
+}
+.box-body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 50px;
+  background: linear-gradient(#ffffff,#ffefa0)
+}
+.box-lid {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: 90%;
+  height: 40px;
+  background-color: #cc231e;
+  height: 40px;
+  width: 180px;
+  border-radius: 5%;
+  box-shadow: 0 8px 4px -4px rgba(0, 0, 0, 0.3);
+}
+.box-lid::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 50px;
+  background: linear-gradient(#ffefa0,#fff)
+}
+.box-bowtie {
+  z-index: 1;
+  height: 100%;
+}
+.box-bowtie::before, .box-bowtie::after {
+  content: "";
+  width: 83.3333333333px;
+  height: 83.3333333333px;
+  border: 16.6666666667px solid white;
+  border-radius: 50% 50% 0 50%;
+  position: absolute;
+  bottom: 99%;
+  z-index: -1;
+}
+.box-bowtie::before {
+  left: 50%;
+  -webkit-transform: translateX(-100%) skew(10deg, 10deg);
+          transform: translateX(-100%) skew(10deg, 10deg);
+}
+.box-bowtie::after {
+  left: 50%;
+  -webkit-transform: translateX(0%) rotate(90deg) skew(10deg, 10deg);
+          transform: translateX(0%) rotate(90deg) skew(10deg, 10deg);
+}
+
+@-webkit-keyframes box-lid {
+  0%,
+  42% {
+    -webkit-transform: translate3d(-50%, 0%, 0) rotate(0deg);
+            transform: translate3d(-50%, 0%, 0) rotate(0deg);
+  }
+  60% {
+    -webkit-transform: translate3d(-85%, -230%, 0) rotate(-25deg);
+            transform: translate3d(-85%, -230%, 0) rotate(-25deg);
+  }
+  90%, 100% {
+    -webkit-transform: translate3d(-119%, 225%, 0) rotate(-70deg);
+            transform: translate3d(-119%, 225%, 0) rotate(-70deg);
+  }
+}
+
+@keyframes box-lid {
+  0%,
+  42% {
+    -webkit-transform: translate3d(-50%, 0%, 0) rotate(0deg);
+            transform: translate3d(-50%, 0%, 0) rotate(0deg);
+  }
+  60% {
+    -webkit-transform: translate3d(-85%, -230%, 0) rotate(-25deg);
+            transform: translate3d(-85%, -230%, 0) rotate(-25deg);
+  }
+  90%, 100% {
+    -webkit-transform: translate3d(-119%, 225%, 0) rotate(-70deg);
+            transform: translate3d(-119%, 225%, 0) rotate(-70deg);
+  }
+}
+@-webkit-keyframes box-body {
+  0% {
+    -webkit-transform: translate3d(0%, 0%, 0) rotate(0deg);
+            transform: translate3d(0%, 0%, 0) rotate(0deg);
+  }
+  25% {
+    -webkit-transform: translate3d(0%, 25%, 0) rotate(20deg);
+            transform: translate3d(0%, 25%, 0) rotate(20deg);
+  }
+  50% {
+    -webkit-transform: translate3d(0%, -15%, 0) rotate(0deg);
+            transform: translate3d(0%, -15%, 0) rotate(0deg);
+  }
+  70% {
+    -webkit-transform: translate3d(0%, 0%, 0) rotate(0deg);
+            transform: translate3d(0%, 0%, 0) rotate(0deg);
+  }
+}
+@keyframes box-body {
+  0% {
+    -webkit-transform: translate3d(0%, 0%, 0) rotate(0deg);
+            transform: translate3d(0%, 0%, 0) rotate(0deg);
+  }
+  25% {
+    -webkit-transform: translate3d(0%, 25%, 0) rotate(20deg);
+            transform: translate3d(0%, 25%, 0) rotate(20deg);
+  }
+  50% {
+    -webkit-transform: translate3d(0%, -15%, 0) rotate(0deg);
+            transform: translate3d(0%, -15%, 0) rotate(0deg);
+  }
+  70% {
+    -webkit-transform: translate3d(0%, 0%, 0) rotate(0deg);
+            transform: translate3d(0%, 0%, 0) rotate(0deg);
+  }
+}
+@-webkit-keyframes box-bowtie-right {
+  0%,
+  50%,
+  75% {
+    -webkit-transform: translateX(0%) rotate(90deg) skew(10deg, 10deg);
+            transform: translateX(0%) rotate(90deg) skew(10deg, 10deg);
+  }
+  90%,
+  100% {
+    -webkit-transform: translate(-50%, -15%) rotate(45deg) skew(10deg, 10deg);
+            transform: translate(-50%, -15%) rotate(45deg) skew(10deg, 10deg);
+    box-shadow: 0px 4px 8px -4px rgba(0, 0, 0, 0.3);
+  }
+}
+@keyframes box-bowtie-right {
+  0%,
+  50%,
+  75% {
+    -webkit-transform: translateX(0%) rotate(90deg) skew(10deg, 10deg);
+            transform: translateX(0%) rotate(90deg) skew(10deg, 10deg);
+  }
+  90%,
+  100% {
+    -webkit-transform: translate(-50%, -15%) rotate(45deg) skew(10deg, 10deg);
+            transform: translate(-50%, -15%) rotate(45deg) skew(10deg, 10deg);
+    box-shadow: 0px 4px 8px -4px rgba(0, 0, 0, 0.3);
+  }
+}
+@-webkit-keyframes box-bowtie-left {
+  0% {
+    -webkit-transform: translateX(-100%) rotate(0deg) skew(10deg, 10deg);
+            transform: translateX(-100%) rotate(0deg) skew(10deg, 10deg);
+  }
+  50%,
+  75% {
+    -webkit-transform: translate(-50%, -15%) rotate(45deg) skew(10deg, 10deg);
+            transform: translate(-50%, -15%) rotate(45deg) skew(10deg, 10deg);
+  }
+  90%,
+  100% {
+    -webkit-transform: translateX(-100%) rotate(0deg) skew(10deg, 10deg);
+            transform: translateX(-100%) rotate(0deg) skew(10deg, 10deg);
+  }
+}
+@keyframes box-bowtie-left {
+  0% {
+    -webkit-transform: translateX(-100%) rotate(0deg) skew(10deg, 10deg);
+            transform: translateX(-100%) rotate(0deg) skew(10deg, 10deg);
+  }
+  50%,
+  75% {
+    -webkit-transform: translate(-50%, -15%) rotate(45deg) skew(10deg, 10deg);
+            transform: translate(-50%, -15%) rotate(45deg) skew(10deg, 10deg);
+  }
+  90%,
+  100% {
+    -webkit-transform: translateX(-100%) rotate(0deg) skew(10deg, 10deg);
+            transform: translateX(-100%) rotate(0deg) skew(10deg, 10deg);
+  }
+}
+h5{
+    font-family: 'Zen Dots', cursive;
+    color:white;
+}
+.cl{
+    font-family: 'Zen Dots', cursive;
+    color:white;
+}
+            </style>
+            <section class="services" id="info_tab"style="text-align:center">
+                <img src="../images/tree.png">
+                <h3 class="text-primary">Gifts</h3>
+                     <div class="row justify-content-center" id="mark">         
+                    </div>
+            </section>
+         <script>
+             var value_array = [
+    'air+fryer',
+    'alarm',
+    'backpack',
+    'bath+kit',
+    'blender',
+    'charging+port',
+    'cutter',
+    'digital+toaster',
+    'dish+drainer',
+    'drone',
+    'dyson+airwrap',
+    'dyson+fan',
+    'face+roller',
+    'foot+massager',
+    'gps+tracker',
+    'health+watch',
+    'heartrate+watch',
+    'ice+maker',
+    'led+lights',
+    'mini+fridge',
+    'projector',
+    'ring+system',
+    'scale',
+    'skin+tightner',
+    'skincare',
+    'sleeping+device',
+    'sleepware',
+    'smart+watch',
+    'utensil+cleaner',
+    'virtual+reality'
+]
+var gift_title=[
+    'Air Fryer',
+    'Alarm',
+    'Backpack',
+    'Bath Kit',
+    'Blender',
+    'Charing Port',
+    'Cutter',
+    'Digital Toaster',
+    'Dish Drainer',
+    'Drone',
+    'Dyson Airwrap',
+    'Dyson Fan',
+    'Face Roller',
+    'Foot Massager',
+    'Gps Tracker',
+    'Health Watch',
+    'Heartrate Watch',
+    'Ice Maker',
+    'Led Lights',
+    'Mini Fridge',
+    'Projector',
+    'Ring System',
+    'Scale',
+    'Skin Tightner',
+    'Skincare',
+    'Sleeping Device',
+    'Sleepware',
+    'Smart Watch',
+    'Utensile Cleaner',
+    'Virtual Reality'
+]
+var image_array = [
+    'air_fryer.jpg',
+    'alarm.jpg',
+    'backpack.jpg',
+    'bath_kit.jpg',
+    'blender.jpg',
+    'charging_port.jpg',
+    'cutter.jpg',
+    'digital_toaster.jpg',
+    'dish_drainer.jpg',
+    'drone.jpg',
+    'dyson_airwrap.jpg',
+    'dyson_fan.jpg',
+    'face_roller.jpg',
+    'foot_massager.jpg',
+    'gps_tracker.jpg',
+    'health_watch.jpg',
+    'heartrate_watch.jpg',
+    'ice_maker.jpg',
+    'led_lights.jpg',
+    'mini_fridge.jpg',
+    'projector.jpg',
+    'ring_system.jpg',
+    'scale.jpg',
+    'skin_tightner.jpg',
+    'skincare.jpg',
+    'sleeping_device.jpg',
+    'sleepware.jpg',
+    'smart_watch.jpg',
+    'utensil_cleaner.jpg',
+    'virtual_reality.jpg'
+]
+var links_array=[
+    "https://www.walmart.com/ip/FrenchMay-Air-Fryer-3-7Qt-1500W-Comes-with-Recipes-CookBook-Touch-Screen-Control-Dishwasher-Safe-Auto-Shut-off-Timer/958628696",
+    "https://www.amazon.com/Digital-Projection-Ceiling-Display-Adjustable/dp/B09L4DY9MX",
+    "https://keeback.com/",
+    "https://www.target.com/p/freida-joe-pink-peony-fragrance-bath-body-collection-in-pink-tub-basket-gift-set/-/A-87613156?preselect=87613156#lnk=sametab",
+    "https://www.kohls.com/product/prd-4431869/ninja-professional-plus-kitchen-system-with-auto-iq.jsp?skuid=64031357&CID=shopping30&utm_campaign=SMALL%20ELECTRICS&utm_medium=CSE&utm_source=google&utm_product=64031357&utm_campaignid=9836151764&gclid=Cj0KCQiAj4ecBhD3ARIsAM4Q_jENDo2If4J5KdPrMs1j9FxMW2oxufqw3tvLio2OtGWv8lq7kCLEyA0aArwsEALw_wcB&gclsrc=aw.ds",
+    "https://www.bestbuy.com/site/belkin-boost-charge-pro-3-in-1-wireless-charging-pad-with-magsafe-for-iphone-14-13-12-series-devices-black/6510109.p?skuId=6510109#anchor=productVariations",
+    "https://www.bestbuy.com/site/revolution-cooking-revolution-instaglo-r180-toaster-stainless-steel/6412512.p?skuId=6412512&ref=212&loc=1&extStoreId=388&ref=212&loc=1&gclid=Cj0KCQiAj4ecBhD3ARIsAM4Q_jELiIHCA5iUtCxSs8cvmXgoeH79WgGT-rh29wn3iha560u5dMPaeGIaAszCEALw_wcB&gclsrc=aw.ds",
+    "https://www.houzz.com/products/guzzini-kitchen-apple-green-fill-and-drain-cutlery-drainer-prvw-vr~156056383",
+    "https://www.ebay.com/itm/165471312225",
+    "https://www.ebay.com/itm/143535927951",
+    "https://www.dyson.com/deals/airwrap-deals?utm_source=google&utm_medium=cpc&utm_campaign=us_en_hc_haircare-range_always-on_hair-stylers_do_text_brand_mix_airwrap&utm_term=dyson+air+wrap&gclid=Cj0KCQiAj4ecBhD3ARIsAM4Q_jG3_IjExl-_tdv_WtLRDcZnpvGTgwMTZ-rrgvCvfQLuvTVGDDT9RD4aAgy9EALw_wcB&gclsrc=aw.ds",
+    "https://www.dyson.com/air-treatment",
+    "https://www.sephora.com/product/uplift-body-sonic-massaging-beauty-roller-P439639?country_switch=us&lang=en&skuId=2181188&om_mmc=ppc-GG_18525596383_139024248461_pla-1881692955516_2181188_626611912078_9007229_c&gclid=Cj0KCQiAj4ecBhD3ARIsAM4Q_jFjKsO7pvaQvsOJoJceQRJRkJqnm17IS3EvyvwAn5PaF1YGEpLpP00aAiYYEALw_wcB&gclsrc=aw.ds",
+    "https://www.macys.com/shop/product/sharper-image-shiatsu-foot-massager?ID=12262283&pla_country=US&CAGPSPN=pla&gclsrc=aw.ds&&trackingid=509x1052008746&m_sc=sem&m_sb=Google&m_tp=PLA&m_ac=Google_SH_PLA_Bed_Bath&m_ag=SharperImage&m_cn=GS_BB_PLA_Restructure&m_pi=go_cmp-11411366300_adg-110056517925_ad-473989347353_pla-1011150282164_dev-c_ext-_prd-843479136036USA&gclid=Cj0KCQiAj4ecBhD3ARIsAM4Q_jHLaB0vSgUba6eVEPd-hsmgDSc3-fwRL09r_U8mOWhAuehsJ_VEM3MaAi8aEALw_wcB",
+    "https://www.amazon.com/GPS-Mount-Holder-Adjustable-Garmin/dp/B07NRR85WK",
+    "https://www.amazon.com/Polar-Heart-Rate-Monitor-Women/dp/B07PM54P4N/ref=asc_df_B07PM54P4N/?tag=hyprod-20&linkCode=df0&hvadid=241934290035&hvpos=&hvnetw=g&hvrand=15605044410133732979&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9007229&hvtargid=pla-702706949228&psc=1",
+    "https://www.amazon.com/Fitness-Tracker-Waterproof-Activity-Temperature/dp/B09M3FMHJT/ref=sr_1_2_sspa?crid=3IBV9ISHD9GA4&keywords=Sleep+Sports+Fitness+Activity+Tracker+Smart+Wrist+Band+Pedometer&qid=1669520235&sprefix=sleep+sports+fitness+activity+tracker+smart+wrist+band+pedometer%2Caps%2C89&sr=8-2-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUExSkRLTjIzOEhQN1YyJmVuY3J5cHRlZElkPUEwNzYwNjcwMzQ1WlAxNVpCMVhIVCZlbmNyeXB0ZWRBZElkPUEwMzE5NTkwTEgzTkZKMTk2TTBDJndpZGdldE5hbWU9c3BfYXRmJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ==",
+    "https://www.walmart.com/ip/Sycees-44lbs-24H-Ice-Machine-2-in-1-Ice-Maker-Shaver-Portable-for-Countertop-Auto-Control-with-Ice-Scoop-Cup-Basket-Stainless-Steel/749023266?wmlspartner=wlpa&selectedSellerId=4946&&adid=22222222227749023266_138842699263_18069976004&wl0=&wl1=g&wl2=c&wl3=616712918064&wl4=aud-1651068664746:pla-1723453773263&wl5=9007229&wl6=&wl7=&wl8=&wl9=pla&wl10=113842220&wl11=online&wl12=749023266&veh=sem&gclid=Cj0KCQiAj4ecBhD3ARIsAM4Q_jEjX7St_w_V9bhPYVsOTI-x5JCm-0XMBltS98ACW81N4pyUzE-wbxYaAqjIEALw_wcB&gclsrc=aw.ds",
+    "https://www.amazon.com/Govee-Brighter-Million-Controlled-Kitchen/dp/B07N1CMGQQ/ref=asc_df_B07N1CMGQQ/?tag=hyprod-20&linkCode=df0&hvadid=459709031928&hvpos=&hvnetw=g&hvrand=2883910762180805065&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9007229&hvtargid=pla-850999496586&psc=1",
+    "https://www.build.com/product/summary/1630894?uid=3869985&jmtest=gg-gbav2_3869985&inv=1&&source=gg-gba-pla_3869985!c1767986126!a69609369540!dc!ng&gclid=Cj0KCQiAj4ecBhD3ARIsAM4Q_jEW6MDSAAGBd8lPiJOiVDS78XW60kPyK7883HlqYTnam9bAq_t_C2waAuInEALw_wcB&gclsrc=aw.ds",
+    "https://www.amazon.com/Optoma-GT1080HDRx-Projector-Enhanced-Gameplay/dp/B0BDTPC3QG/ref=asc_df_B0BDTPC3QG/?tag=hyprod-20&linkCode=df0&hvadid=598359406739&hvpos=&hvnetw=g&hvrand=13047195327552230316&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9007229&hvtargid=pla-1849917052999&psc=1",
+    "https://ring.com/419/es/products/video-doorbell-v2",
+    "https://www.bestbuy.com/site/withings-body-body-composition-smart-wi-fi-scale-black/5869533.p?skuId=5869533&ref=212&loc=1&gclid=Cj0KCQiAj4ecBhD3ARIsAM4Q_jFu96jRFtIk-qFy2GJyRzEnoxt3u0gAyAkOQfj_nSlz4eTJ3DHuKtQaAq_8EALw_wcB&gclsrc=aw.ds",
+    "https://www.sephora.com/product/spectralite-faceware-pro-P435378?country_switch=us&lang=en&skuId=2109718&om_mmc=ppc-GG_18532081096_140015651217_pla-1879586012603_2109718_626820665498_9007229_c&gclid=Cj0KCQiAj4ecBhD3ARIsAM4Q_jEUtMMEiOyQSOQJqBMbPpiLkG6pOQHf9JOlLfOzV5zTUbMMeOoq5zQaAqmwEALw_wcB&gclsrc=aw.ds",
+    "https://www.aliexpress.us/item/3256804432185249.html?gatewayAdapt=glo2usa4itemAdapt&_randl_shipto=US",
+    "https://www.kohls.com/product/prd-5136449/sharper-image-sleep-therapy-white-noise-machine.jsp?skuid=78329314&CID=shopping30&utm_campaign=PERSONAL%20CARE&utm_medium=CSE&utm_source=google&utm_product=78329314&utm_campaignid=9836151737&gclid=Cj0KCQiAj4ecBhD3ARIsAM4Q_jGQk4iGq-OupCCC4S36kOM-emS56la9CY5vzYcJEt0TDL5yHRurgPUaAmznEALw_wcB&gclsrc=aw.ds",
+    "https://www.mattressfirm.com/sleep-mask/5637147694.p?variantid=5637154664&utm_kxconfid=t6c7xqs93&gclid=Cj0KCQiAj4ecBhD3ARIsAM4Q_jF7frsdvmjcNIeJ7hvEElgmSO7y8a2roqGPmfaUib0NxfZew59sDP4aAgFVEALw_wcB&gclsrc=aw.ds",
+    "https://www.amazon.com/Fitbit-Charge-Fitness-Wristband-Version/dp/B01K9S24EM",
+    "https://www.amazon.com/Joseph-85105-BladeBrush-Cutlery-Non-Slip/dp/B01I6UGYS2/ref=sr_1_5?keywords=utensil+cleaner&qid=1669517703&sr=8-5",
+    "https://www.gamestop.com/consoles-hardware/virtual-reality/products/meta-quest-2-256gb/305907.html?utm_source=google&utm_medium=feeds&utm_campaign=%24PLA_%24NB_Category_Video+Game+Hardware_Hardware_Virtual+Reality&utm_id=16259677164&gclid=Cj0KCQiAj4ecBhD3ARIsAM4Q_jFp4Lo1s5whzzmxIYbg3OJs080iH8enRFsy-WeM8AzzdLowrFH5ojMaAqXyEALw_wcB&gclsrc=aw.ds"
+]
+var images=[]
+var valuse=[]
+var link=[]
+var gift=[]
+function get_random_image(){
+  for (var i=0, tempimg=image_array,tempval=value_array,temlink=links_array,temgift=gift_title;i<image_array.length;i++){
+    random_index= Math.floor(Math.random()* tempimg.length);
+    images.push(tempimg[random_index])
+    valuse.push(tempval[random_index])
+    link.push(temlink[random_index])
+    gift.push(temgift[random_index])
+    tempimg.splice(random_index,1)
+    tempval.splice(random_index,1)
+    temlink.splice(random_index,1)
+    temgift.splice(random_index,1)
+  }
+}
+  get_random_image()
+          var check=0
+          var loc=""
+          var poc=""
+    function cards(){
+        for(var x=0; x<8; x+=1){
+            var mod="#Modal"+x
+            var modid="Modal"+x
+                $nodes=$("<div class='row justify-content-center' id='mark'></div>").html=("<div class='card col-10 col-md-5 col-xl-3 col-xl-2-5 mx-auto my-3' style='background-color:green;'><div class='card-body'>"+
+                        "<div class='container photo'><div class='row'><div class='col-12 mt-5 d-flex justify-content-center'><div class='box-body'><img class='img' src=../img/adult/"+images[x]+"  value='no' alt="+valuse[x]+ " style='width:150px;height:150px'>"+
+                        "<div class='box-lid'><div class='box-bowtie'></div></div></div></div></div></div><hr><div class='hide'><i class='mx-2 fas fa-info-circle fa-lg' class='btn' title='More Info' type='button' data-toggle='modal' data-target="+mod+" style='color:gold;'></i><span class='sr-only'>More Info.</span>"+
+                        "<div class='modal fade' id="+modid+" tabindex='-1' aria-labelledby='Label' aria-hidden='true'><div class='modal-dialog'><div class='modal-content'><div class='modal-header' style='background-color: red;'><h5 class='modal-title' id='Label'>Information on gift</h5><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span>"+
+                        "</button></div><div class='modal-body' style='background-color: green;'><img class='img' src=../img/adult/"+images[x]+" alt="+valuse[x]+" style='width:150px;height:150px'><div class='cl'>"+gift[x]+"</div><div class='cl'>Location:<button class='location' style='background:none;border-style: none'>Allow loaction</button></div>"+
+                        "<div class='cl'>Find Near Me:<button class='check' alt="+valuse[x]+" style='background:none;border-style: none'>Click Here</button></div><div class='cl'>Link:<a href="+link[x]+"><button style='background:none;border-style: none'>Online</button></a></div></div><div class='modal-footer' style='background-color:red'><button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button></div></div></div></div>"+
+                        "<i class='mx-2 fas fa-solid fa-trash fa-lg btn delete' data-toggle='tooltip' data-placement='bottom'  title='' aria-hidden='true' data-original-title='More Info.' style='color:gold;' type='button'></i><span class='sr-only'>Delete.</span></div><p></p></div></div>")
+                        $("#mark").append($nodes)
+        }
+        }
+    $(document).ready(function(){
+        cards()
+        $(".hide").hide()
+        $(".photo").mouseenter(function(){
+        $nod=$(this).parent().children(".hide").show();
+         });
+
+        $(".delete").click(function(){
+            $node=$(this).parent().parent().parent().remove();
+        });
+        function onSuccess(position){
+            window.alert("Thank you for giving up your location")
+      let {latitude,longitude}=position.coords;
+      console.log(latitude,longitude)
+      loc=latitude;
+      poc=longitude;
+      check=1
+    }
+    function onError(error){
+      if(error.code==1){
+        window.alert("Your Blocked your location please allow us to use your Location")
+      }else if(error.code==1){
+        window.alert("Your location now avilable")
+      }else{
+        window.alert("Your browser not supported")
+      }
+    }
+    $(".location").click(function(){
+        if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(onSuccess,onError);
+        }
+        else{
+        window.alert("Your browser not supported")
+        }
+    })
+    $(".check").click(function(){
+        if(check==1){
+         var alt = $(this).attr("alt")
+        var map="https://www.google.com/maps/search/"+alt+'/@'+loc+','+poc
+        window.open(map)
+        check=0
+        }
+        else{
+        window.alert("First Allow us to use your location husing the Get location button")
+        }
+    })
+})
+</script>

@@ -1,0 +1,133 @@
+<!--<section>
+    <nav class="navbar navbar-expand-lg  navbar-dark bg-primary" style="text-aglin:center">
+    <div class="container">
+        <a href="https://christmas-gifts.epizy.com/index2.html" class="navbar-brand" id="home">christmas-gifts</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav">
+            <li>
+              <a class="nav-link" data-toggle="dropdown" href="#" id="US">About US<span class="caret"></span></a>
+            </li>
+            <li>
+              <a class="nav-link" data-toggle="dropdown" href="#" id="Imup">Images Uploads<span class="caret"></span></a>
+            </li>
+			<li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="java">Category<span class="caret"></span></a>
+              <div class="dropdown-menu" aria-labelledby="java">
+                <a class="dropdown-item" id="adults">Adults</a>
+                <a class="dropdown-item" id="Senior">Senior</a>
+				<a class="dropdown-item" id="kids">Kids</a>
+				<a class="dropdown-item" id="Baby">Baby</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+    </div>
+</nav>
+</section>-->
+<style>
+    #US:hover {
+  color: Black;
+}
+#Imup:hover {
+  color: Black;
+}
+#Baby:hover {
+  color: Black;
+}
+#kids:hover {
+  color: Black;
+}
+#adults:hover {
+  color: Black;
+}
+#Senior:hover {
+  color: Black;
+}
+</style>
+<section>
+        <nav class="navbar navbar-expand-lg navbar-dark" style="text-align:center;background-color:#34A65F">
+        <div class="container">
+            <a href="https://christmas-gifts.epizy.com" class="navbar-brand" id="home" style="padding-left:-100px"><img src="images/Giftoquip.jpg" alt=""></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" style="border-color:white">
+              <span class="navbar-toggler-icon" style="border-color:white"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+              <ul class="navbar-nav">
+                <li>
+                  <a class="nav-link" data-toggle="dropdown" href="#" id="US" style="color:white">About US<span class="caret"></span></a>
+                </li>
+                <li>
+                  <a class="nav-link" data-toggle="dropdown" href="#" id="Imup" style="color:white">Your Gift Ideas Form<span class="caret"></span></a>
+                </li>
+                <li>
+                  <a class="nav-link" data-toggle="dropdown" href="#" id="Baby" style="color:white">Babies<span class="caret"></span></a>
+                </li>
+                <li>
+                  <a class="nav-link" data-toggle="dropdown" href="#" id="kids" style="color:white">Kids<span class="caret"></span></a>
+                </li>
+                <li>
+                  <a class="nav-link" data-toggle="dropdown" href="#" id="adults" style="color:white">Adults<span class="caret"></span></a>
+                </li>
+                <li>
+                  <a class="nav-link" data-toggle="dropdown" href="#" id="Senior" style="color:white">Seniors<span class="caret"></span></a>
+                </li>
+                <li>
+                    <a class="nav-link" data-toggle="dropdown" href="#" id="Senior" style="color:white">
+                        <i class='fa fa-play' style="#F5624D" onclick="disableMute()"></i>
+                        <span class="caret"></span></a>
+                </li>
+                <li>
+                     <a class="nav-link" data-toggle="dropdown" href="#" style="color:white">
+                    <i class='fa fa-pause' style="#F5624D" onclick="enableMute()"></i>
+                    <span class="caret"></span></a>
+                </li>
+              </ul>
+            </div>
+        </div>
+    </nav>
+    </section>
+<script>
+    $(document).ready(function(){
+        $("#US").click(function(){
+			$node=$('#info_tab').children().remove();
+            $node2=$("<script src=../scripts/about.js>");
+            $('#info_tab').prepend($node2);
+		});
+        $("#Imup").click(function(){
+			$node=$('#info_tab').children().remove();
+            $node2=$("<script src=../scripts/home.js>");
+            $('#info_tab').prepend($node2);
+            window.open("https://docs.google.com/forms/d/e/1FAIpQLSeDb0c1s0Os9FuklmSPEboamb61pXv89_Y69jfynFzeygKgCQ/viewform?embedded=true")
+		});
+        $("#adults").click(function(){
+			$node=$('#info_tab').children().remove();
+            $node2=$("<script src=../scripts/adultss.js>");
+            $('#info_tab').prepend($node2);
+		});
+        $("#Senior").click(function(){
+			$node=$('#info_tab').children().remove();
+            $node2=$("<script src=../scripts/seniors.js>");
+            $('#info_tab').prepend($node2);
+		});
+        $("#kids").click(function(){
+			$node=$('#info_tab').children().remove();
+            $node2=$("<script src=../scripts/kids.js>");
+            $('#info_tab').prepend($node2);
+		});
+        $("#Baby").click(function(){
+			$node=$('#info_tab').children().remove();
+            $node2=$("<script src=../scripts/babys.js>");
+            $('#info_tab').prepend($node2);
+		});
+            var vid = document.getElementById("myaudio");
+            function enableMute() { 
+            vid.muted = true;
+            } 
+            function disableMute() { 
+            vid.muted = false;
+            } 
+    });
+</script>
